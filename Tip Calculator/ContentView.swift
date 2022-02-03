@@ -44,7 +44,9 @@ struct ContentView: View {
     var body: some View {
         
         TitleView(title: "Bill Amount")
+            .padding(10)
         TextFieldView(amount: $billAmount)
+            .padding(10)
         
         //Configure Tip % picker
         Picker("Tip Percentage", selection: $tipPercentage) {
@@ -66,7 +68,6 @@ struct ContentView: View {
                     Spacer()
                     
                     Text("$\(totalAmountWithTip, specifier: "%.2f")")
-                        .foregroundColor(.white)
                         .font(.system(size: 45, weight: .black, design: .monospaced))
                         .fontWeight(.black)
                     
@@ -85,7 +86,7 @@ struct ContentView: View {
                                     .font(.system(.caption, design: .rounded))
                                     .fontWeight(.light)
                                     
-                                Text("$ \(tipValue, specifier: "%.2f")")
+                                Text("$\(tipValue, specifier: "%.2f")")
                                     .font(.system(.body, design:.monospaced))
                                     .fontWeight(.black)
                         }
@@ -93,7 +94,7 @@ struct ContentView: View {
                             
                         }
                         
-                    }.foregroundColor(.white)
+                    }
                     
                     Spacer()
             }
